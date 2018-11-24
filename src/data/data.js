@@ -1,7 +1,7 @@
 let data = [
   {
     task_id: 1,
-    task_name: "Gettign Started",
+    task_name: "Getting Started",
     task_status: "approved",
     task_due_date: "01-07-19",
     task_end_date: "",
