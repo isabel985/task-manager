@@ -53,6 +53,7 @@ body {
 
 .list {
   padding-left: 0px;
+  clear: left;
 }
 
 .list-item {
@@ -82,7 +83,28 @@ body {
 /*   HEADER STYLES  */ 
 /********************/
 
-/* .table-headers h1,
+.table-headers {
+  display: flex;
+  align-items: flex-end;
+}
+
+.table-headers h1, 
 .table-headers span {
   float: left;
- } */
+  margin: 0px;
+  line-height: 1em;
+}
+
+.table-headers h1 {
+  width: 38%;
+  margin-right: 2%;
+}
+
+.table-headers span:nth-child(2) {
+  width: 18%;
+  margin-right: 2%;
+}
+
+.table-headers span:nth-child(3) {
+  width: 40%;
+}
