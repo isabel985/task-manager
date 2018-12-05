@@ -107,7 +107,7 @@ body {
 }
 
 /********************/
-/*   HEADER STYLES  */ 
+/*TABLE HEADER STYLES*/ 
 /********************/
 
 .table-headers {
@@ -134,4 +134,42 @@ body {
 
 .table-headers span:nth-child(3) {
   width: 40%;
+}
+
+/* **************** */
+/* LIST ITEM STYLES */
+/* **************** */
+
+/********************/
+/*DETAILS SIDEBAR STYLES*/ 
+/********************/
+
+.item-detail-value.status {
+  text-transform: capitalize;
+}
+
+.item-detail-value.status:before {
+  height: 12px;
+  width: 12px;
+  position: relative;
+  display: inline-block;
+  content: "";
+  margin: 3px 5px 0px 0px;
+  border-radius: 50%;
+}
+
+.item-detail-value.status.approved:before {
+  background: #f19531;
+}
+
+.item-detail-value.status.in-progress:before {
+  background: #12c8b1;
+}
+
+.item-detail-value.status.in-consideration:before {
+  background: #31b1f1;
+}
+
+.item-detail-value.status.complete:before {
+  background: #808080;
 }
