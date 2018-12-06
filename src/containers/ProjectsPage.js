@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 
 class ProjectsPage extends Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+      super(props);
+  }
 
-    render() {
-        return (<h1>projects</h1>);
-    }
+  render() {
+      return (
+      <h1>Projects</h1>
+      );
+  }
 }
 
 export default ProjectsPage;

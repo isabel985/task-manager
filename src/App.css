@@ -162,7 +162,7 @@ body {
   background: #f19531;
 }
 
-.item-detail-value.status.in-progress:before {
+.item-detail-value.status.in-process:before {
   background: #12c8b1;
 }
 

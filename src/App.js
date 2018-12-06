@@ -4,6 +4,7 @@ import TasksPage from './containers/TasksPage';
 import Header from './components/Header';
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import ProjectsPage from './containers/ProjectsPage';
+import TeamMembersPage from './containers/TeamMembersPage';
 
 class App extends Component {
   render() {
@@ -13,7 +14,7 @@ class App extends Component {
           <Header />
           <Route path="/tasks" render={() => (<TasksPage />)} />
           <Route path="/projects" render={() => (<ProjectsPage />)} />
-          <Route path="/teammembers" render={() => (<TasksPage />)} />
+          <Route path="/teammembers" render={() => (<TeamMembersPage />)} />
         </div>
       </BrowserRouter>
     );
