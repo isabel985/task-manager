@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
 import TasksPage from './containers/TasksPage';
+import Header from './components/Header';
+import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
+import ProjectsPage from './containers/ProjectsPage';
 
 class App extends Component {
   render() {
     return (
-      <div className="wrapper"><TasksPage /></div>
+      <BrowserRouter>
+        <div className="wrapper">
+          <Header />
+          <Route path="/tasks" render={() => (<TasksPage />)} />
+          <Route path="/projects" render={() => (<ProjectsPage />)} />
+          <Route path="/teammembers" render={() => (<TasksPage />)} />
+        </div>
+      </BrowserRouter>
     );
   }
 }

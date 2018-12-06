@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import data from '../data/data';
 import TaskSummary from '../components/TaskSummary';
-import TaskDetails from '../components/TaskDetails'
+import TaskDetails from '../components/TaskDetails';
+import Header from '../components/Header';
 
 class TasksPage extends Component {
   constructor(props) {
