@@ -56,6 +56,7 @@ class TasksPage extends Component {
                   project_id={project.project_id}
                   project_name={project.project_name}
                   handleDisplayTaskDetails={this.handleDisplayTaskDetails}
+                  isSelected={task === this.state.selectedTask && true}
                 />
               })
             })}
