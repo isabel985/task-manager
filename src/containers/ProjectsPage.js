@@ -31,12 +31,10 @@ class ProjectsPage extends Component {
   render() {
     return (
       <React.Fragment>
+        <button className="btn-display-add-modal">Add Project</button>
         <div className={ this.state.selectedProject ? `summaries-list sidebar-expanded` : `summaries-list`}>
           <div className="table-headers">
             <h1>Projects</h1>
-          </div>
-          <div className="add-new">
-              <button>Add Project</button>
           </div>
           {/* might need to change later to not be hardcoded */}
           <div className="status-headers">

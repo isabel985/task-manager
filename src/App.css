@@ -124,8 +124,11 @@ a.button {
   margin-right: 2%;
 }
 
-.add-new button {
+.btn-display-add-modal {
   float: right;
+  border-radius: 3px;
+  background: #f1f1f1;
+  font-size: 1em;
  }
 
 .status-headers h3 {
