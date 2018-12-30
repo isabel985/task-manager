@@ -41,10 +41,6 @@ class TasksPage extends Component {
   render() {
     return (
       <React.Fragment>
-<div className="edit-task-details">
-        <button>Edit</button>
-      </div>
-
         <div className={ this.state.selectedTask ? `summaries-list sidebar-expanded` : `summaries-list` }>
           <div className="table-headers">
             <h1>Tasks</h1>
