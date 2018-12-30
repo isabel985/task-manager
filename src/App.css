@@ -97,6 +97,20 @@ a.button {
   width: calc(100% - 300px - 15px);
 }
 
+.btn-display-add-modal {
+  float: right;
+  border-radius: 3px;
+  background: #f1f1f1;
+  font-size: 1em;
+ }
+
+.status-headers h3 {
+  font-style: italic;
+  color: #606060;
+  border-bottom: 1px solid #606060;
+  padding-bottom: 10px;
+}
+
 /********************/
 /*TABLE HEADER STYLES*/ 
 /********************/
@@ -113,29 +127,18 @@ a.button {
   line-height: 1em;
 }
 
-.table-headers span:nth-child(2) {
-  width: 19%;
+.table-headers h1 {
+  width: calc(36% - 7px);
   margin-right: 2%;
 }
 
-.table-headers h1,
+.table-headers span:nth-child(2) {
+  width: 20%;
+  margin-right: 2%;
+}
+
 .table-headers span:nth-child(3) {
   width: 36%;
-  margin-right: 2%;
-}
-
-.btn-display-add-modal {
-  float: right;
-  border-radius: 3px;
-  background: #f1f1f1;
-  font-size: 1em;
- }
-
-.status-headers h3 {
-  font-style: italic;
-  color: #606060;
-  border-bottom: 1px solid #606060;
-  padding-bottom: 10px;
 }
 
 /************************/
@@ -233,7 +236,7 @@ a.button {
   height: auto;
   overflow-y:scroll;
   display: block;
-  width: 95%;
+  width: 100%;
   border: 5px solid #eee;
   background: #fff;
   margin: 10px 0;
