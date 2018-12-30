@@ -5,9 +5,7 @@ const TaskDetails = (props) => {
     <div className="details-sidebar">
       <h3>{props.selectedTask.task_name}</h3>
       <p>{props.selectedProject.project_name}</p>
-      <div className="edit-task-details">
-        <button>Edit</button>
-      </div>
+      <button className="edit-task-details">Edit</button>
 
       <div className="item-detail-group">
         <div className="item-detail">

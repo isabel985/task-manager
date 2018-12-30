@@ -162,17 +162,12 @@ a.button {
 }
 
 .details-sidebar .edit-task-details {
-  margin-top: 10px;
-  width: 100%;
-}
-
-.details-sidebar .edit-task-details button {
-  align-items: right;
-  color: red;
+  float: right;
 }
 
 .item-detail-group {
   border-bottom: solid 2px #d1d1d1;
+  clear: both;
 }
 
 .item-detail {
