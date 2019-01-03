@@ -16,7 +16,7 @@ class TeamMemberForm extends Component {
                 <label className="item-detail-label">Name:</label>
                 
                 <div className="item-detail-value">
-                  <input type="text"></input>
+                  <input className="item-detail-input" type="text"></input>
                 </div>
               </div>
             </div>
