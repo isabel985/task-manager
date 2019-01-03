@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import teammemberdata from '../data/teammembersdata';
+import TeamMembersSummary from '../components/TeamMembersSummary';
 
 class TeamMembersPage extends Component {
   constructor(props) {
@@ -14,14 +15,17 @@ class TeamMembersPage extends Component {
             <h1>Team Members</h1>
           </div>
           <ul className="list">
-            <li className="list-item">Hal</li>
-            <li className="list-item">Hatem</li>
+          {teammemberdata.map( (member) => {
+            return <TeamMembersSummary 
+              key={member.member_id} 
+              member={member}
+            />
+          })}
           </ul>
         </div>
       </React.Fragment>
     )
   }
-
 }
 
 export default TeamMembersPage;
