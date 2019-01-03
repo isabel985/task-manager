@@ -7,7 +7,7 @@ class TeamMemberForm extends Component {
 
   render() {
     return (
-      <div className={`modal`}>
+      <div className={`modal` + `${this.props.displayModal ? ` show` : ``}`}>
         <div className="modal-content">
           <h2>Add Team Member</h2>
           <form>

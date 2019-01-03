@@ -7,16 +7,28 @@ import TeamMemberForm from '../components/TeamMemberForm';
 class TeamMembersPage extends Component {
   constructor(props) {
     super(props);
+    
+    this.state = {
+      addTeamMember: false
+    }
   }
 
   handleDisplayAddTeamMemberForm = () => {
-    
+    this.setState({addTeamMember: true});
+    console.log(this.state.addTeamMember);
   }
 
   render() {
     return (
       <React.Fragment> 
-        <button className="btn-display-add-modal">Add Team Member</button>
+
+        <button 
+          className="btn-display-add-modal"
+          onClick={this.handleDisplayAddTeamMemberForm}
+        >
+          Add Team Member
+        </button>
+
         <div className="summaries-list team-members">
           <div className="table-headers">
             <h1>Team Members</h1>
@@ -31,7 +43,9 @@ class TeamMembersPage extends Component {
           </ul>
         </div>
 
-        <TeamMemberForm />
+        <TeamMemberForm 
+          displayModal={this.state.addTeamMember}
+        />
 
       </React.Fragment>
     )
