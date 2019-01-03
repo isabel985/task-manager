@@ -58,6 +58,14 @@ a.button {
   margin-top: 0;
 }
 
+.list-item:first-of-type {
+  border-top: solid 2px #d1d1d1;
+}
+
+.projects .list-item {
+  border-top: none;
+}
+
 .list-item button {
   display: flex;
   align-items: right;

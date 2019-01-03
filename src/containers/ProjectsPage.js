@@ -39,7 +39,17 @@ class ProjectsPage extends Component {
     return (
       <React.Fragment>
         <button className="btn-display-add-modal">Add Project</button>
-        <div className={ this.state.selectedProject ? `summaries-list sidebar-expanded` : `summaries-list` }>
+        <div className={ 
+          `summaries-list projects` + 
+          `${this.state.selectedProject 
+            ? ` sidebar-expanded` 
+            : ``}` 
+          }
+        >
+        {/* <div className={ this.state.selectedProject ? `summaries-list sidebar-expanded` : `summaries-list` }> */}
+        
+        {/* line above is old code. line above works the same but now we don't have to repeat class names */}
+
           <div className="table-headers">
             <h1>Projects</h1>
           </div>
