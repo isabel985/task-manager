@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import data from '../data/data';
 import ProjectSummary from '../components/ProjectSummary';
 import ProjectDetails from '../components/ProjectDetails';
+import AddProjectForm from '../components/AddProjectForm';
 import Header from '../components/Header';
 
 class ProjectsPage extends Component {
@@ -13,7 +14,8 @@ class ProjectsPage extends Component {
       addProject: false }
   }
 
-  handleAddProjectSave = () => {
+  handleAddProjectSave = (project) => {
+    console.log(project);
     this.setState({addProject: false});
   }
 
@@ -52,7 +54,13 @@ class ProjectsPage extends Component {
   render() {
     return (
       <React.Fragment>
-        <button className="btn-display-add-modal">Add Project</button>
+
+        <button 
+        className="btn-display-add-modal"
+        onClick={this.handleDisplayAddProjectForm}>
+          Add Project
+        </button>
+
         <div className={ 
           `summaries-list projects` + 
           `${this.state.selectedProject 
@@ -123,6 +131,13 @@ class ProjectsPage extends Component {
         {console.log("state selected Project", this.state.selectedProject)}
 
         {this.state.selectedProject && <ProjectDetails selectedProject={this.state.selectedProject} />}
+
+        <AddProjectForm
+          displayModal={this.state.addProject}
+          handleAddProjectSave={this.handleAddProjectSave}
+          handleCancelAddProjectForm={this.handleCancelAddProjectForm}
+        />
+
       </React.Fragment>
     );
   }
