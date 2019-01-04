@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import teammemberdata from '../data/teammembersdata';
 import TeamMembersSummary from '../components/TeamMembersSummary';
-import teamMembers from '../data/teammembersdata';
 import TeamMemberForm from '../components/TeamMemberForm';
 
 class TeamMembersPage extends Component {
@@ -13,9 +12,18 @@ class TeamMembersPage extends Component {
     }
   }
 
+  handleAddTeamMemberSave = (member) => {
+    teammemberdata.push(member);
+
+    this.setState({addTeamMember: false});
+  }
+
   handleDisplayAddTeamMemberForm = () => {
     this.setState({addTeamMember: true});
-    console.log(this.state.addTeamMember);
+  }
+
+  handleCancelTeamMemberForm = () => {
+    this.setState({addTeamMember: false});
   }
 
   render() {
@@ -44,7 +52,9 @@ class TeamMembersPage extends Component {
         </div>
 
         <TeamMemberForm 
-          displayModal={this.state.addTeamMember}
+          displayModal={this.state.addTeamMember} 
+          handleCancelTeamMemberForm={this.handleCancelTeamMemberForm} 
+          handleAddTeamMemberSave={this.handleAddTeamMemberSave}
         />
 
       </React.Fragment>
