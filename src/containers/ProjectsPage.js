@@ -8,7 +8,21 @@ class ProjectsPage extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { selectedProject: null }
+    this.state = { 
+      selectedProject: null,
+      addProject: false }
+  }
+
+  handleAddProjectSave = () => {
+    this.setState({addProject: false});
+  }
+
+  handleDisplayAddProjectForm = () => {
+    this.setState({addProject: true});
+  }
+
+  handleCancelAddProjectForm = () => {
+    this.setState({addProject: false});
   }
 
   handleDisplayProjectDetails = (project_id) => {
