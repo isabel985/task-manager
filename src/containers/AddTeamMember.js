@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { addMember } from '../actions';
-import TeamMemberForm from '../components/TeamMemberForm';
+import TeamMemberForm from '../components/AddTeamMemberForm';
 
 const mapDispatchToProps = dispatch => {
   return {
