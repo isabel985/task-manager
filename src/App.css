@@ -236,9 +236,17 @@ form .item-detail-group:nth-last-child(2) {
   background: #808080;
 }
 
-.full-width {
+.item-detail.full-width {
   width: 100%;
   display: inline-block;
+}
+
+.full-width .item-detail-value {
+  width: 100%;
+  margin-top: 6px;
+  float: left;
+  border: 5px solid #eee;
+  background-color: #fff;
 }
 
 .item-detail-value.paragraph {
@@ -247,11 +255,11 @@ form .item-detail-group:nth-last-child(2) {
   height: auto;
   overflow-y: scroll;
   display: block;
-  width: 100%;
+  /* width: 100%;
   border: 5px solid #eee;
   background: #fff;
   margin: 10px 0;
-  line-height: 20px;
+  line-height: 20px; */
 }
 
 /* LET'S TRY GRID */

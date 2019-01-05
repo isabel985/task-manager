@@ -15,7 +15,12 @@ class ProjectsPage extends Component {
   }
 
   handleAddProjectSave = (project) => {
-    console.log(project);
+    console.log(data);
+
+    data.push(project);
+
+    console.log(data);
+    
     this.setState({addProject: false});
   }
 
