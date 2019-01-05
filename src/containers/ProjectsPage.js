@@ -15,12 +15,12 @@ class ProjectsPage extends Component {
   }
 
   handleAddProjectSave = (project) => {
-    console.log(data);
-
+    let savedProject = Object.assign(project, {
+      project_tasks: []
+    });
+    
     data.push(project);
 
-    console.log(data);
-    
     this.setState({addProject: false});
   }
 
