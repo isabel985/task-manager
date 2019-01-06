@@ -5,18 +5,31 @@ class ProjectDetails extends Component {
     super(props);
 
     this.state = {
-
+      editingProject: null,
+      editProject: false
     }
+  }
+
+  handleProjectDetailsEdit = () => {
+    this.setState({editProject: true});
+  }
+
+  handleProjectDetailsSave = () => {
+// add code here to save changes to project
+
+    this.setState({editProject: false});
   }
 
   render() {
     return(
 
-// const ProjectDetails = (props) => {
-//   return (
     <div className="details-sidebar">
       <h3>{this.props.selectedProject.project_name}</h3>
-      <button className="edit-project-details">Edit</button>
+
+      <button 
+        className="edit-project-details">
+          Edit
+      </button>
 
       <div className="item-detail-group">
         <div className="item-detail">
