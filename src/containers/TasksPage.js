@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import data from '../data/data';
 import TaskSummary from '../components/TaskSummary';
 import TaskDetails from '../components/TaskDetails';
+import AddTaskForm from '../components/AddTaskForm';
 import Header from '../components/Header';
 
 class TasksPage extends Component {
@@ -10,8 +11,30 @@ class TasksPage extends Component {
 
     this.state = {
       selectedTask: null,
-      selectedProject: null
+      selectedProject: null,
+      addTask: false
     }
+  }
+
+  handleAddTaskSave = (project_id, task) => {
+    console.log(`adding task: `, task);
+    console.log(`to project id: `, project_id);
+
+    let projectIndex = data.findIndex(project => project.project_id === project_id);
+
+    console.log(`data project index: `, data[projectIndex]);
+    
+    data[projectIndex].project_tasks.push(task);
+
+    this.setState({addTask: false});
+  }
+
+  handleDisplayAddTaskForm = () => {
+    this.setState({addTask: true});
+  }
+
+  handleCancelAddTaskForm = () => {
+    this.setState({addTask: false});
   }
 
   handleDisplayTaskDetails = (project_id, task_id) => {
@@ -41,6 +64,12 @@ class TasksPage extends Component {
   render() {
     return (
       <React.Fragment>
+        <button
+          className="btn-display-add-modal"
+          onClick={this.handleDisplayAddTaskForm}>
+            Add Task
+        </button>
+        
         <div className={ this.state.selectedTask ? `summaries-list sidebar-expanded` : `summaries-list` }>
           <div className="table-headers">
             <h1>Tasks</h1>
@@ -67,6 +96,12 @@ class TasksPage extends Component {
         {console.log("state selected Project", this.state.selectedProject)}
           
         {this.state.selectedTask && <TaskDetails selectedTask={this.state.selectedTask} selectedProject={this.state.selectedProject}/>}
+      
+      <AddTaskForm
+        displayModal={this.state.addTask}
+        handleAddTaskSave={this.handleAddTaskSave}
+        handleCancelAddTaskForm={this.handleAddTaskForm} />
+
       </React.Fragment>
     );
   }
