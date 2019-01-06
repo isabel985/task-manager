@@ -84,7 +84,7 @@ class AddTaskForm extends Component {
                     type="text"
                     name="task_name"
                     onChange={this.handleInputChange}
-                    value={this.state.task_name} />
+                    value={this.state.task.task_name} />
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@ class AddTaskForm extends Component {
                     className="item-detail-input"
                     name="task_status"
                     onChange={this.handleInputChange}
-                    value={this.state.task_status}>
+                    value={this.state.task.task_status}>
                     
                     <option value="in-consideration">
                       In Consideration
@@ -155,7 +155,7 @@ class AddTaskForm extends Component {
                     type="text"
                     name="task_due_date"
                     onChange={this.handleInputChange}
-                    value={this.state.task_due_date} />
+                    value={this.state.task.task_due_date} />
                 </div>
               </div>
             </div>
@@ -172,7 +172,7 @@ class AddTaskForm extends Component {
                     type="text"
                     name="task_assigned_to"
                     onChange={this.handleInputChange}
-                    value={this.state.task_assigned_to} />
+                    value={this.state.task.task_assigned_to} />
                 </div>
               </div>
 
@@ -187,7 +187,7 @@ class AddTaskForm extends Component {
                     type="text"
                     name="task_assigned_by"
                     onChange={this.handleInputChange}
-                    value={this.state.task_assigned_by} />
+                    value={this.state.task.task_assigned_by} />
                 </div>
               </div>
             </div>
@@ -204,7 +204,7 @@ class AddTaskForm extends Component {
                     type="text"
                     name="task_description"
                     onChange={this.handleInputChange}
-                    value={this.state.task_description} />
+                    value={this.state.task.task_description} />
                 </div>
               </div>
             </div>
