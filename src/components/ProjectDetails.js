@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import EditProjectForm from './EditProjectForm';
+import ProjectDetailsDisplay from './ProjectDetailsDisplay';
+import data from '../data/data';
 
 class ProjectDetails extends Component {
   constructor(props) {
@@ -11,13 +14,29 @@ class ProjectDetails extends Component {
   }
 
   handleProjectDetailsEdit = () => {
-    this.setState({editProject: true});
+    this.setState({
+      // editingProject: this.props.selectedProject,
+      editProject: true
+    });
+
+    console.log(`editProject: true`);
   }
 
-  handleProjectDetailsSave = () => {
+  handleProjectDetailsSave = (project) => {
 // add code here to save changes to project
 
-    this.setState({editProject: false});
+    let projectIndex = data.findIndex(dataProject => dataProject.project_id === project.project_id);
+
+    data[projectIndex] = project;
+
+    console.log(`project receive from project edit form: `, project.project_name);
+
+    console.log(data[projectIndex]);
+
+    this.setState({
+      // editingProject: project,
+      editProject: false
+    });
   }
 
   render() {
@@ -26,10 +45,17 @@ class ProjectDetails extends Component {
     <div className="details-sidebar">
       <h3>{this.props.selectedProject.project_name}</h3>
 
-      <button 
-        className="edit-project-details">
-          Edit
-      </button>
+      {this.state.editProject 
+      ?      
+        <EditProjectForm 
+        project={this.props.selectedProject}
+        handleProjectDetailsSave=
+        {this.handleProjectDetailsSave}/> 
+      : 
+        <ProjectDetailsDisplay 
+        project={this.props.selectedProject}
+        handleProjectDetailsEdit={this.handleProjectDetailsEdit}/> 
+      }
 
       <div className="item-detail-group">
         <div className="item-detail">
@@ -38,10 +64,7 @@ class ProjectDetails extends Component {
             {this.props.selectedProject.project_status.replace(/-/g, ' ')}</span>
         </div>
         
-        <div className="item-detail">
-          <span className="item-detail-label">Category: </span>
-          <span className="item-detail-value">{this.props.selectedProject.project_category}</span>
-        </div>
+        
       </div>
 
       <div className="item-detail-group">
