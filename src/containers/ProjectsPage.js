@@ -11,7 +11,8 @@ class ProjectsPage extends Component {
 
     this.state = { 
       selectedProject: null,
-      addProject: false }
+      addProject: false 
+    }
   }
 
   handleAddProjectSave = (project) => {
