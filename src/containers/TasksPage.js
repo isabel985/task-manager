@@ -100,7 +100,7 @@ class TasksPage extends Component {
       <AddTaskForm
         displayModal={this.state.addTask}
         handleAddTaskSave={this.handleAddTaskSave}
-        handleCancelAddTaskForm={this.handleAddTaskForm} />
+        handleCancelAddTaskForm={this.handleCancelAddTaskForm} />
 
       </React.Fragment>
     );
