@@ -23,6 +23,10 @@ header {
   margin-bottom: 20px;
 }
 
+select {
+  text-transform: capitalize;
+}
+
 button {
   cursor: pointer;
 }
@@ -207,7 +211,7 @@ form .item-detail-group:nth-last-child(2) {
   overflow-x: scroll;
 }
 
-.item-detail-value.status {
+.status {
   text-transform: capitalize;
 }
 

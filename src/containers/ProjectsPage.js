@@ -111,6 +111,7 @@ class ProjectsPage extends Component {
           displayModal={this.state.addProject}
           handleAddProjectSave={this.handleAddProjectSave}
           handleCancelAddProjectForm={this.handleCancelAddProjectForm}
+          statuses={statuses}
         />
 
       </React.Fragment>
