@@ -109,12 +109,13 @@ a.button {
   font-size: 1em;
  }
 
-.status-headers h3 {
+.projects .status {
   font-style: italic;
   color: #606060;
   border-bottom: 1px solid #606060;
   padding-bottom: 10px;
   margin-bottom: 0;
+  text-transform: capitalize;
 }
 
 /********************/

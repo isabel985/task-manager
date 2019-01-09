@@ -58,6 +58,9 @@ class ProjectsPage extends Component {
   }
 
   render() {
+
+    let statuses = ["in-consideration", "approved", "in-process", "complete"];
+
     return (
       <React.Fragment>
 
@@ -74,65 +77,31 @@ class ProjectsPage extends Component {
             : ``}` 
           }
         >
-        {/* <div className={ this.state.selectedProject ? `summaries-list sidebar-expanded` : `summaries-list` }> */}
-        
-        {/* line above is old code. line above works the same but now we don't have to repeat class names */}
 
           <div className="table-headers">
             <h1>Projects</h1>
           </div>
-          {/* might need to change later to not be hardcoded */}
-          <div className="status-headers">
-            <h3>In Consideration</h3>
-              <ul className="list">
-              {this.getProjectsByStatus("in-consideration").map( (project) => {
-                return <ProjectSummary 
-                key={project.project_id}
-                project={project}
-                project_name={project.project_name}
-                handleDisplayProjectDetails={this.handleDisplayProjectDetails}
-                isSelected={project === this.state.selectedProject && true}
-                />
-              } )}
-              </ul>
-            <h3>Approved</h3>
-              <ul className="list">
-              {this.getProjectsByStatus("approved").map( (project) => {
-                return <ProjectSummary 
-                key={project.project_id}
-                project={project}
-                project_name={project.project_name}
-                handleDisplayProjectDetails={this.handleDisplayProjectDetails}
-                isSelected={project === this.state.selectedProject && true}
-                />
-                } 
-              )}
-            </ul>
-            <h3>In Process</h3>
-              <ul className="list">
-              {this.getProjectsByStatus("in-process").map( (project) => {
-                return <ProjectSummary 
-                key={project.project_id}
-                project={project}
-                project_name={project.project_name}
-                handleDisplayProjectDetails={this.handleDisplayProjectDetails}
-                isSelected={project === this.state.selectedProject && true}
-                />
-              } )}
-            </ul>
-            <h3>Complete</h3>
-              <ul className="list">
-              {this.getProjectsByStatus("complete").map( (project) => {
-                return <ProjectSummary 
-                key={project.project_id}
-                project={project}
-                project_name={project.project_name}
-                handleDisplayProjectDetails={this.handleDisplayProjectDetails}
-                isSelected={project === this.state.selectedProject && true}
-                />
-              } )}
-            </ul>
-          </div>
+
+            {statuses.map( (status) => {
+              return (
+                <React.Fragment>
+                  <h3 className="status">{status.replace(/-/g, ' ')}</h3>
+                    
+                  <ul className="list">
+                    {this.getProjectsByStatus(status).map( (project) => {
+                      return <ProjectSummary 
+                      key={project.project_id}
+                      project={project}
+                      project_name={project.project_name}
+                      handleDisplayProjectDetails={this.handleDisplayProjectDetails}
+                      isSelected={project === this.state.selectedProject && true}
+                      />
+                    } )}
+                  </ul>
+                </React.Fragment>
+              );
+            })}
+
         </div>
         {console.log("state selected Project", this.state.selectedProject)}
 
