@@ -4,6 +4,7 @@ import ProjectSummary from '../components/ProjectSummary';
 import ProjectDetails from '../components/ProjectDetails';
 import AddProjectForm from '../components/AddProjectForm';
 import Header from '../components/Header';
+import teammembersdata from '../data/teammembersdata';
 
 class ProjectsPage extends Component {
   constructor(props) {
@@ -105,13 +106,18 @@ class ProjectsPage extends Component {
         </div>
         {console.log("state selected Project", this.state.selectedProject)}
 
-        {this.state.selectedProject && <ProjectDetails selectedProject={this.state.selectedProject} />}
+        {this.state.selectedProject && 
+          <ProjectDetails 
+            selectedProject={this.state.selectedProject}
+            teammembersdata={teammembersdata}
+          />}
 
         <AddProjectForm
           displayModal={this.state.addProject}
           handleAddProjectSave={this.handleAddProjectSave}
           handleCancelAddProjectForm={this.handleCancelAddProjectForm}
           statuses={statuses}
+          teammembersdata={teammembersdata}
         />
 
       </React.Fragment>

@@ -148,7 +148,18 @@ class AddProjectForm extends Component {
                       onChange={this.handleInputChange}
                       value={this.state.project_assigned_to} 
                     >
-                      </select>
+
+                    {this.props.teammembersdata.map( (member) => {
+                      return(
+                        <option value={member.member_id}>
+                        
+                        {member.member_name}
+
+                        </option>
+                      );
+                    })}
+
+                    </select>
                   </div>
                 </div>
 

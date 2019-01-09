@@ -83,7 +83,12 @@ class ProjectDetails extends Component {
       <div className="item-detail-group">
         <div className="item-detail">
           <span className="item-detail-label">Assigned To: </span>
-          <span className="item-detail-value">{this.props.selectedProject.project_assigned_to}
+          <span className="item-detail-value">
+            
+            {(this.props.teammembers.filter( (member) => {
+                return member.member_id === "1"
+              })).member_name}
+            
           </span>
         </div>
         <div className="item-detail">
