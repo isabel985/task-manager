@@ -12,8 +12,8 @@ class AddProjectForm extends Component {
       project_category: '',
       project_due_date: '',
       project_end_date: '',
-      project_assigned_to: '',
-      project_assigned_by: '',
+      project_assigned_to: this.props.teammembersdata[0].member_id,
+      project_assigned_by: this.props.teammembersdata[0].member_id,
       project_resource_link: '',
       project_final_link: '',
       project_description: '',
@@ -49,13 +49,25 @@ class AddProjectForm extends Component {
       project_category: '',
       project_due_date: '',
       project_end_date: '',
-      project_assigned_to: '',
-      project_assigned_by: '',
+      project_assigned_to: this.props.teammembersdata[0].member_id,
+      project_assigned_by: this.props.teammembersdata[0].member_id,
       project_resource_link: '',
       project_final_link: '',
       project_description: '',
       project_notes: ''
     });
+  }
+
+  displayTeamMemberName = () => {
+    return this.props.teammembersdata.map( (member) => {
+      return(
+        <option value={member.member_id}>
+        
+        {member.member_name}
+
+        </option>
+      );
+    })
   }
 
   render() {
@@ -149,15 +161,7 @@ class AddProjectForm extends Component {
                       value={this.state.project_assigned_to} 
                     >
 
-                    {this.props.teammembersdata.map( (member) => {
-                      return(
-                        <option value={member.member_id}>
-                        
-                        {member.member_name}
-
-                        </option>
-                      );
-                    })}
+                    {this.displayTeamMemberName()}
 
                     </select>
                   </div>
@@ -169,12 +173,16 @@ class AddProjectForm extends Component {
                   </label>
 
                   <div className="item-detail-value">
-                    <input
+                    <select
                       className="item-detail-input"
-                      type="text"
                       name="project_assigned_by"
                       onChange={this.handleInputChange}
-                      value={this.state.project_assigned_by} />
+                      value={this.state.project_assigned_by}
+                    >
+                    
+                    {this.displayTeamMemberName()}
+
+                    </select>
                   </div>
                 </div>
               </div>
