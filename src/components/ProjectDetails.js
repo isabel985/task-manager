@@ -39,6 +39,12 @@ class ProjectDetails extends Component {
     });
   }
 
+  displayTeamMemberName = (id) => {
+    return this.props.teammembersdata.filter( (member) => {
+      return member.member_id === id;
+    })[0].member_name;
+  }
+
   render() {
     return(
 
@@ -84,16 +90,17 @@ class ProjectDetails extends Component {
         <div className="item-detail">
           <span className="item-detail-label">Assigned To: </span>
           <span className="item-detail-value">
-            
-            {(this.props.teammembers.filter( (member) => {
-                return member.member_id === "1"
-              })).member_name}
+
+          {this.displayTeamMemberName(this.props.selectedProject.project_assigned_to)}
             
           </span>
         </div>
         <div className="item-detail">
           <span className="item-detail-label">Assigned By: </span>
-          <span className="item-detail-value">{this.props.selectedProject.project_assigned_by}
+          <span className="item-detail-value">
+          
+          {this.displayTeamMemberName(this.props.selectedProject.project_assigned_by)}
+
           </span>
         </div>
       </div>
