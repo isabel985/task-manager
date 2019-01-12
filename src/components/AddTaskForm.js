@@ -68,10 +68,11 @@ class AddTaskForm extends Component {
   displayTeamMemberName = () => {
     return this.props.teammembersdata.map( (member) => {
       return(
-        <option value={member.member_id}>
-        
-        {member.member_name}
-
+        <option 
+          key={member.member_id} 
+          value={member.member_id}
+        >
+          {member.member_name}
         </option>
       );
     })
@@ -112,21 +113,18 @@ class AddTaskForm extends Component {
                     className="item-detail-input"
                     name="task_status"
                     onChange={this.handleInputChange}
-                    value={this.state.task.task_status}>
-                    
-                    <option value="in-consideration">
-                      In Consideration
-                    </option>
-                    <option value="approved">
-                      Approved
-                    </option>
-                    <option value="in-process">
-                      In Process
-                    </option>
-                    <option value="complete">
-                      Complete
-                    </option>
-
+                    value={this.state.task.task_status}
+                  >
+                    {this.props.statuses.map( (status) => {
+                      return (
+                        <option 
+                          key={status}
+                          value={status} className="status"
+                        >
+                          {status.replace(/-/g, ' ')}
+                        </option>
+                      )
+                    })}
                   </select>
                 </div>
               </div>
