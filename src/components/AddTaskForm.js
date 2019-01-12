@@ -12,8 +12,8 @@ class AddTaskForm extends Component {
         task_status: 'in-consideration',
         task_due_date: '',
         task_end_date: '',
-        task_assigned_to: '',
-        task_assigned_by: '',
+        task_assigned_to: this.props.teammembersdata[0].member_id,
+        task_assigned_by: this.props.teammembersdata[0].member_id,
         task_description: ''
       },
       project_id: data[0].project_id
@@ -57,12 +57,24 @@ class AddTaskForm extends Component {
         task_status: 'in-consideration',
         task_due_date: '',
         task_end_date: '',
-        task_assigned_to: '',
-        task_assigned_by: '',
+        task_assigned_to: this.props.teammembersdata[0].member_id,
+        task_assigned_by: this.props.teammembersdata[0].member_id,
         task_description: ''
       },
       project_id: data[0].project_id
     });
+  }
+
+  displayTeamMemberName = () => {
+    return this.props.teammembersdata.map( (member) => {
+      return(
+        <option value={member.member_id}>
+        
+        {member.member_name}
+
+        </option>
+      );
+    })
   }
 
   render() {
@@ -167,12 +179,16 @@ class AddTaskForm extends Component {
                 </label>
 
                 <div className="item-detail-value">
-                  <input
+                  <select
                     className="item-detail-input"
-                    type="text"
                     name="task_assigned_to"
                     onChange={this.handleInputChange}
-                    value={this.state.task.task_assigned_to} />
+                    value={this.state.task.task_assigned_to} 
+                  >
+
+                  {this.displayTeamMemberName()}
+
+                  </select>
                 </div>
               </div>
 
@@ -182,12 +198,15 @@ class AddTaskForm extends Component {
                 </label>
 
                 <div className="item-detail-value">
-                  <input
+                  <select
                     className="item-detail-input"
-                    type="text"
                     name="task_assigned_by"
                     onChange={this.handleInputChange}
-                    value={this.state.task.task_assigned_by} />
+                    value={this.state.task.task_assigned_by} 
+                  >
+                    {this.displayTeamMemberName()}
+
+                  </select>
                 </div>
               </div>
             </div>

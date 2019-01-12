@@ -4,6 +4,7 @@ import TaskSummary from '../components/TaskSummary';
 import TaskDetails from '../components/TaskDetails';
 import AddTaskForm from '../components/AddTaskForm';
 import Header from '../components/Header';
+import teammembersdata from '../data/teammembersdata';
 
 class TasksPage extends Component {
   constructor(props) {
@@ -100,7 +101,9 @@ class TasksPage extends Component {
       <AddTaskForm
         displayModal={this.state.addTask}
         handleAddTaskSave={this.handleAddTaskSave}
-        handleCancelAddTaskForm={this.handleCancelAddTaskForm} />
+        handleCancelAddTaskForm={this.handleCancelAddTaskForm} 
+        teammembersdata={teammembersdata}
+        />
 
       </React.Fragment>
     );
