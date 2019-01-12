@@ -9,6 +9,12 @@ class TaskDetails extends Component {
     }
   }
 
+  displayTeamMemberName = (id) => {
+    return this.props.teammembersdata.filter( (member) => {
+      return member.member_id === id;
+    })[0].member_name;
+  }
+
   render() {
     return (
       <div className="details-sidebar">
@@ -41,12 +47,17 @@ class TaskDetails extends Component {
         <div className="item-detail-group">
           <div className="item-detail">
             <span className="item-detail-label">Assigned To: </span>
-            <span className="item-detail-value">{this.props.selectedTask.task_assigned_to}
+            <span className="item-detail-value">
+            
+            {this.displayTeamMemberName(this.props.selectedTask.task_assigned_to)}
+
             </span>
           </div>
           <div className="item-detail">
             <span className="item-detail-label">Assigned By: </span>
-            <span className="item-detail-value">{this.props.selectedTask.task_assigned_by}
+            <span className="item-detail-value">            
+              {this.displayTeamMemberName(this.props.selectedTask.task_assigned_by)}
+              
             </span>
           </div>
         </div>

@@ -99,7 +99,12 @@ class TasksPage extends Component {
         {console.log("state selected Task", this.state.selectedTask)}
         {console.log("state selected Project", this.state.selectedProject)}
           
-        {this.state.selectedTask && <TaskDetails selectedTask={this.state.selectedTask} selectedProject={this.state.selectedProject}/>}
+        {this.state.selectedTask && 
+          <TaskDetails 
+            selectedTask={this.state.selectedTask} 
+            selectedProject={this.state.selectedProject}
+            teammembersdata={teammembersdata}
+          />}
       
       <AddTaskForm
         displayModal={this.state.addTask}
