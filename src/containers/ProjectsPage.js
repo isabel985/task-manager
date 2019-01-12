@@ -85,7 +85,9 @@ class ProjectsPage extends Component {
 
             {statuses.map( (status) => {
               return (
-                <React.Fragment>
+                <React.Fragment
+                  key={status}
+                >
                   <h3 className="status">{status.replace(/-/g, ' ')}</h3>
                     
                   <ul className="list">
