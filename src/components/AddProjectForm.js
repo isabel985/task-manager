@@ -61,10 +61,11 @@ class AddProjectForm extends Component {
   displayTeamMemberName = () => {
     return this.props.teammembersdata.map( (member) => {
       return(
-        <option value={member.member_id}>
-        
-        {member.member_name}
-
+        <option 
+          key={member.member_id}
+          value={member.member_id}
+        >
+          {member.member_name}
         </option>
       );
     })
@@ -109,7 +110,14 @@ class AddProjectForm extends Component {
                       value={this.state.project_status}
                     >
                       {this.props.statuses.map( (status) => {
-                        return <option value={status} className="status">{status.replace(/-/g, ' ')}</option>
+                        return (
+                          <option 
+                            key={status}
+                            value={status} className="status"
+                          >
+                            {status.replace(/-/g, ' ')}
+                          </option>
+                        )
                       })}
                     
                     </select>
