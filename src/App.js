@@ -12,6 +12,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="wrapper">
           <Header />
+          <Redirect exact from="/" to="/projects" />
           <Route path="/tasks" render={() => (<TasksPage />)} />
           <Route path="/projects" render={() => (<ProjectsPage />)} />
           <Route path="/teammembers" render={() => (<TeamMembersPage />)} />
