@@ -22,16 +22,17 @@ class ProjectDetails extends Component {
     console.log(`editProject: true`);
   }
 
-  handleProjectDetailsSave = (project) => {
+  handleProjectDetailsSave = project => {
 // add code here to save changes to project
+// think about how to use the spread operator for the project itself
 
-    let projectIndex = data.findIndex(dataProject => dataProject.project_id === project.project_id);
+    let foundProject = data.find(dataProject => dataProject.project_id === project.project_id);
 
-    data[projectIndex] = project;
+    data[foundProject] = project;
 
     console.log(`project receive from project edit form: `, project.project_name);
 
-    console.log(data[projectIndex]);
+    console.log(data[foundProject]);
 
     this.setState({
       // editingProject: project,
